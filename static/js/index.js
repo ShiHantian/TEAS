@@ -92,7 +92,10 @@ window.addEventListener('scroll', function() {
 
 // Video carousel autoplay when in view
 function setupVideoCarouselAutoplay() {
-    const carouselVideos = document.querySelectorAll('.results-carousel video');
+    // Autoplay for all our inline videos:
+    // - legacy selector kept for backward compatibility
+    // - current page uses `.experiment-video-grid`
+    const carouselVideos = document.querySelectorAll('.results-carousel video, .experiment-video-grid video');
     
     if (carouselVideos.length === 0) return;
     
