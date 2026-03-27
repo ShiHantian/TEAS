@@ -414,10 +414,10 @@
         <h2 class="title is-3">Method Overview</h2>
         <figure class="image">
           <img src="static/images/overview-ver3.png" alt="Overview of the TEAS pipeline showing RGB images, target-error-augmented state inputs, and visuomotor model outputs." loading="lazy">
+          <figcaption class="figure-caption">
+            <strong>Overview of the proposed Target-Error-Augmented State (TEAS).</strong> The core design lies in replacing the standard proprioceptive state representation with a Target-Error-Augmented State Vector. This augmented state is formed by concatenating the standard Proprioception, the commanded Target state, and the tracking Error between them. By explicitly including the tracking error alongside the conventional inputs to the visuomotor model, the policy gains a rich, implicit force sense that significantly boosts performance in contact-rich tasks without requiring physical force sensors.
+          </figcaption>
         </figure>
-        <p class="is-size-6 has-text-grey mt-3">
-          Overview of the TEAS framework and model structure.
-        </p>
       </div>
     </div>
   </div>
@@ -434,11 +434,17 @@
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/data_record_dataflow.jpg" alt="Data-record-time data-flow of TEAS" loading="lazy">
+              <figcaption class="figure-caption">
+                <strong>Data collection dataflow.</strong> [Top] Conventional dataflow of a standard visuomotor policy, relying solely on vision and proprioception. [Bottom] Dataflow using our proposed method (TEAS). At each time step, the human operator teleoperates the robot via the master arm, providing the target joint position qtarget,t. The tracking error between this target and the follower arm’s actual position qt inherently encodes the contact force, and is recorded along with visual observations to form the augmented state data.
+              </figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure class="image">
               <img src="static/images/inference_dataflow.jpg" alt="Inference-time data-flow of TEAS" loading="lazy">
+              <figcaption class="figure-caption">
+                <strong>Deployment and inference dataflow.</strong> [Top] Inference dataflow of a standard visuomotor policy. [Bottom] Inference dataflow using our proposed method (TEAS). During autonomous deployment, the target command is supplied by an auto-regressive rule using the previously executed action. This forms the tracking error ∆qt, which is merged with current vision and proprioception into the augmented state and fed back to the policy.
+              </figcaption>
             </figure>
           </div>
         </div>
@@ -456,6 +462,9 @@
         <h2 class="title is-3">Experiment Results</h2>
         <figure class="image">
           <img src="static/images/main_exp_result.png" alt="Experiment Results" loading="lazy">
+          <figcaption class="figure-caption">
+            <strong>Overall Performance.</strong> Success rates (%) of ACT and Diffusion Policy (DP) across five contact-rich tasks, with and without our proposed Target-Error-Augmented State (TEAS). The results show that TEAS significantly improves the performance of both models, achieving nearly 100% success rates on all tasks.
+          </figcaption>
         </figure>
       </div>
     </div>

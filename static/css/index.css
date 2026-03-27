@@ -38,6 +38,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Figure captions (paper-style) */
+.figure-caption {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
 /* Per-section width controls for wide screens */
 .container.teas-max-abstract {
   max-width: 1000px !important;
