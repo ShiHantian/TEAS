@@ -290,6 +290,42 @@ body {
   font-weight: 500;
 }
 
+.experiment-video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.experiment-video-card {
+  overflow: hidden;
+  padding: 1.5rem;
+  background: var(--background-primary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
+}
+
+.experiment-video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.experiment-video-card video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+.experiment-video-card-last {
+  grid-column: 1 / span 2;
+  max-width: 50%;
+  width: 100%;
+  justify-self: center;
+}
+
 /* Pagination and Misc Improvements */
 .slider-pagination .slider-page {
   background: var(--primary-color);
@@ -645,6 +681,20 @@ code {
   .results-carousel .item {
     margin: 0.5rem;
     padding: 1rem;
+  }
+
+  .experiment-video-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .experiment-video-card {
+    padding: 1rem;
+  }
+
+  .experiment-video-card-last {
+    grid-column: auto;
+    max-width: 100%;
   }
   
   .teaser .hero-body {
