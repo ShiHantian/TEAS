@@ -38,6 +38,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Per-section width controls for wide screens */
+.container.teas-max-abstract {
+  max-width: 1000px !important;
+}
+
+.container.teas-max-overview {
+  max-width: 1000px !important;
+}
+
+.container.teas-max-dataflow {
+  max-width: 1300px !important;
+}
+
 
 /* Modern Button Styles */
 .button {
